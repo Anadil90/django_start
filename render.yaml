@@ -10,9 +10,9 @@ services:
     name: mysite
     runtime: python
     buildCommand: |
-    pip install -r requirements.txt
-    python manage.py collectstatic --no-input
-    python manage.py collectstatic --no-input
+      pip install -r requirements.txt
+      python manage.py collectstatic --no-input
+      python manage.py collectstatic --no-input
     startCommand: "python -m gunicorn my_project.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
